@@ -14,17 +14,19 @@ namespace Mastermind
             Mastermind mastermind = new Mastermind();
             mastermind.Initialize();
 
-            Random rand = new Random();
+            Random rand = new Random(0);
 
 
 
             int answer = 0;
             int count = 0;
-
+            
             while (answer != 5)
             {
                 count += 1;
-                answer = mastermind.Grade(new List<int>(new int[] { rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8) }));
+                
+                List<int> guess = new List<int>(new int[] { rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8) });
+                answer = mastermind.Grade(guess);
             }
 
             Console.WriteLine("Guesses: " + count);

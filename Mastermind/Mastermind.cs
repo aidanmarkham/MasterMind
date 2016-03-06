@@ -20,8 +20,9 @@ namespace Mastermind
         {
             for (int i = 0; i < 5; i++)
             {
-                //solution[i] = rand.Next(0, 8);
-                solution.Add(i);
+                int nextnum = rand.Next(0, 8);
+                solution.Add(nextnum);
+                
             }
         }
 
