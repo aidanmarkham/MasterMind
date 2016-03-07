@@ -25,8 +25,6 @@ namespace Mastermind
                 
             }
         }
-
-
         public int Grade(List<int> guess)
         {
             int colorMatch = 0;
@@ -57,5 +55,9 @@ namespace Mastermind
 
             return fullMatch;
         }
+
+
     }
+
+
 }

@@ -18,17 +18,23 @@ namespace Mastermind
 
 
 
-            int answer = 0;
-            int count = 0;
-            
-            while (answer != 5)
+            int answer;
+            int count;
+            List<int> guesses = new List<int>();
+            while (true)
             {
-                count += 1;
-                
-                List<int> guess = new List<int>(new int[] { rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8) });
-                answer = mastermind.Grade(guess);
-            }
+                answer = 0;
+                count = 0;
+                while (answer != 5)
+                {
+                    count += 1;
 
+                    List<int> guess = new List<int>(new int[] { rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8) });
+                    answer = mastermind.Grade(guess);
+                }
+                guesses.Add(count);
+                Console.WriteLine(guesses.Average());
+            }
             Console.WriteLine("Guesses: " + count);
         }
     }
