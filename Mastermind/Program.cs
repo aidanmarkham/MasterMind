@@ -25,12 +25,12 @@ namespace Mastermind
             {
                 answer = 0;
                 count = 0;
-                while (answer != 5)
+                while (answer != 4)
                 {
                     count += 1;
 
-                    List<int> guess = new List<int>(new int[] { rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8), rand.Next(0, 8) });
-                    answer = mastermind.Grade(guess);
+                    List<int> guess = new List<int>(new int[] { rand.Next(0, 6), rand.Next(0, 6), rand.Next(0, 6), rand.Next(0, 6)});
+                    answer = mastermind.Grade(guess)[0];
                 }
                 guesses.Add(count);
                 Console.WriteLine(guesses.Average());

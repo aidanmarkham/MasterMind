@@ -18,14 +18,14 @@ namespace Mastermind
         }
         public void Initialize()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 4; i++)
             {
-                int nextnum = rand.Next(0, 8);
+                int nextnum = rand.Next(0, 6);
                 solution.Add(nextnum);
                 
             }
         }
-        public int Grade(List<int> guess)
+        public int[] Grade(List<int> guess)
         {
             int colorMatch = 0;
             int fullMatch = 0;
@@ -53,7 +53,7 @@ namespace Mastermind
 
             
 
-            return fullMatch;
+            return new int[2]{fullMatch, colorMatch};
         }
 
 
